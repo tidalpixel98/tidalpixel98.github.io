@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>抖漫免费在线观看-抖漫免费在线观看漫画入口_抖漫免费在线观看资源导航</title>
+<meta name="description" content="抖漫免费在线观看主题首页，介绍抖漫免费在线观看的浏览入口、免费漫画观看方式与常见问题，按题材梳理可直接阅读的漫画资源，方便快速进入抖漫免费在线观看页面。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1b2e'/%3E%3Cpath d='M18 20h12a6 6 0 016 6v22a5 5 0 00-5-5H18z' fill='%23ff7a59'/%3E%3Cpath d='M46 20H34a6 6 0 00-6 6v22a5 5 0 015-5h13z' fill='%23ffd166'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#1c1b2e;
+    --ink-soft:#4a4860;
+    --paper:#fbf8f4;
+    --card:#ffffff;
+    --line:#e8e2da;
+    --coral:#ff6b4a;
+    --coral-deep:#e2502f;
+    --sun:#ffc94d;
+    --mint:#2fa88a;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block}
+  .wrap{width:min(1140px,92vw);margin:0 auto}
+
+  /* ---------- Header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,248,244,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:.2px}
+  .brand svg{width:36px;height:36px;flex:none}
+  nav.main{display:flex;gap:22px;font-size:15px;color:var(--ink-soft);font-weight:500}
+  nav.main a{padding:4px 0;border-bottom:2px solid transparent;transition:.2s}
+  nav.main a:hover{color:var(--coral-deep);border-color:var(--coral)}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    background:var(--coral);color:#fff;font-weight:700;font-size:15px;
+    padding:11px 22px;border-radius:999px;border:none;cursor:pointer;
+    box-shadow:0 6px 16px rgba(255,107,74,.28);
+    transition:transform .18s ease,background .18s ease;
+  }
+  .btn:hover{background:var(--coral-deep);transform:translateY(-1px)}
+  .btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+  .btn.ghost:hover{background:#fdf3ec;color:var(--coral-deep)}
+  .btn[aria-disabled="true"]{background:#dcd6ce;color:#7c7689;box-shadow:none;pointer-events:none}
+  .menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:8px 10px;cursor:pointer}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:52px 0 40px;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fff2ec;color:var(--coral-deep);
+    font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;margin-bottom:18px;
+  }
+  h1{font-size:clamp(30px,4.2vw,46px);line-height:1.22;letter-spacing:-.5px;font-weight:900}
+  .lede{margin-top:18px;font-size:16.5px;color:var(--ink-soft);max-width:36em}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .stats{display:flex;gap:30px;margin-top:34px;flex-wrap:wrap}
+  .stats div strong{display:block;font-size:22px;font-weight:900;color:var(--coral-deep)}
+  .stats div span{font-size:13px;color:#8a8496}
+  .hero-art{position:relative}
+  .hero-art svg{width:100%;height:auto;filter:drop-shadow(0 18px 34px rgba(28,27,46,.14))}
+  .blob{
+    position:absolute;inset:auto -60px -70px auto;width:280px;height:280px;border-radius:50%;
+    background:radial-gradient(circle at 30% 30%,#ffe3a3,#ffb8a6 70%,transparent 72%);
+    filter:blur(6px);z-index:-1;opacity:.8;
+  }
+
+  /* ---------- Section basics ---------- */
+  section{padding:52px 0}
+  .sec-head{max-width:40em;margin-bottom:30px}
+  .sec-head .tag{font-size:13px;font-weight:800;color:var(--mint);letter-spacing:2px}
+  h2{font-size:clamp(22px,2.6vw,30px);line-height:1.3;margin-top:8px;letter-spacing:-.3px}
+  .sec-head p{margin-top:12px;color:var(--ink-soft);font-size:15.5px}
+
+  /* ---------- Entry cards ---------- */
+  .entries{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .entry{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 24px;transition:.22s;position:relative;overflow:hidden;
+  }
+  .entry:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,27,46,.08);border-color:#f4cdbf}
+  .entry .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;margin-bottom:16px}
+  .entry h3{font-size:17.5px;margin-bottom:8px}
+  .entry p{font-size:14.5px;color:var(--ink-soft)}
+  .entry .link{margin-top:16px;font-size:14px;font-weight:700;color:var(--coral-deep);display:inline-flex;gap:6px;align-items:center}
+
+  /* ---------- Genre chips ---------- */
+  .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+  .chip{
+    background:#fff;border:1px solid var(--line);color:var(--ink-soft);
+    font-size:14px;font-weight:600;padding:8px 18px;border-radius:999px;cursor:pointer;transition:.18s;
+  }
+  .chip:hover{border-color:var(--coral);color:var(--coral-deep)}
+  .chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+  .grid-comics{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .comic{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;transition:.22s;
+  }
+  .comic:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,27,46,.08)}
+  .comic .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative}
+  .comic .cover span{
+    position:absolute;left:14px;top:14px;background:rgba(28,27,46,.72);color:#fff;
+    font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;
+  }
+  .comic .body{padding:18px 20px 22px}
+  .comic h3{font-size:16.5px;margin-bottom:6px}
+  .comic p{font-size:14px;color:var(--ink-soft)}
+  .comic .meta{display:flex;gap:12px;margin-top:14px;font-size:12.5px;color:#8a8496}
+  .empty-note{display:none;text-align:center;color:#8a8496;font-size:15px;padding:30px 0}
+
+  /* ---------- How to / steps ---------- */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
+  .step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px}
+  .step .num{
+    width:34px;height:34px;border-radius:50%;background:#fff2ec;color:var(--coral-deep);
+    font-weight:900;display:grid;place-items:center;margin-bottom:14px;font-size:15px;
+  }
+  .step h3{font-size:16px;margin-bottom:6px}
+  .step p{font-size:14.3px;color:var(--ink-soft)}
+
+  /* ---------- Article / FAQ ---------- */
+  .split{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:start}
+  .prose p{margin-bottom:16px;font-size:15.5px;color:var(--ink-soft)}
+  .prose strong{color:var(--ink)}
+  .faq{display:grid;gap:12px}
+  details{
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;
+  }
+  details[open]{border-color:#f4cdbf;background:#fffdfb}
+  summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:14px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--coral-deep);font-weight:900;font-size:18px;line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{margin-top:12px;font-size:14.5px;color:var(--ink-soft)}
+
+  /* ---------- CTA band ---------- */
+  .band{
+    background:linear-gradient(115deg,#211f36,#332c4d 60%,#4a3560);
+    color:#fff;border-radius:26px;padding:44px 40px;
+    display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;
+  }
+  .band h2{color:#fff;margin:0;font-size:clamp(21px,2.5vw,28px)}
+  .band p{color:#cfc8dd;margin-top:10px;font-size:15px;max-width:34em}
+  .band .btn{background:var(--sun);color:#241f14;box-shadow:0 8px 20px rgba(255,201,77,.3)}
+  .band .btn:hover{background:#ffd76e}
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--line);margin-top:30px;padding:40px 0 34px;background:#fff}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+  .foot-grid h4{font-size:14px;margin-bottom:14px;letter-spacing:.4px}
+  .foot-grid p,.foot-grid a{font-size:13.8px;color:#7c7689;display:block;margin-bottom:8px}
+  .foot-grid a:hover{color:var(--coral-deep)}
+  .foot-bottom{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:#8a8496;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .brand-foot{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px;margin-bottom:12px}
+  .brand-foot svg{width:30px;height:30px}
+
+  @media (max-width:900px){
+    .hero-grid,.split{grid-template-columns:1fr}
+    .entries,.grid-comics,.steps{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .hero-art{order:-1;max-width:420px}
+  }
+  @media (max-width:640px){
+    .bar{padding:12px 0}
+    nav.main{
+      display:none;position:absolute;left:0;right:0;top:100%;
+      background:#fff;border-bottom:1px solid var(--line);
+      flex-direction:column;gap:0;padding:8px 4vw 16px;
+    }
+    nav.main.open{display:flex}
+    nav.main a{padding:12px 0;border-bottom:1px solid var(--line)}
+    .menu-toggle{display:block}
+    .bar .btn{display:none}
+    .entries,.grid-comics,.steps,.foot-grid{grid-template-columns:1fr}
+    .hero{padding:34px 0 26px}
+    section{padding:38px 0}
+    .band{padding:32px 24px;border-radius:20px}
+    .stats{gap:22px}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="抖漫免费在线观看 首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1c1b2e"/>
+        <path d="M18 20h12a6 6 0 016 6v22a5 5 0 00-5-5H18z" fill="#ff7a59"/>
+        <path d="M46 20H34a6 6 0 00-6 6v22a5 5 0 015-5h13z" fill="#ffd166"/>
+        <circle cx="47" cy="15" r="5" fill="#2fa88a"/>
+      </svg>
+      <span>抖漫免费在线观看</span>
+    </a>
+    <nav class="main" id="navMain">
+      <a href="#entry">观看入口</a>
+      <a href="#genres">题材分类</a>
+      <a href="#how">观看方式</a>
+      <a href="#about">关于本站</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="btn" href="#entry">进入抖漫免费在线观看</a>
+    <button class="menu-toggle" id="menuBtn" aria-expanded="false" aria-controls="navMain">菜单</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">免费漫画 · 在线阅读 · 无需注册</span>
+        <h1>抖漫免费在线观看</h1>
+        <p class="lede">抖漫免费在线观看是一个面向漫画读者的阅读主题页，按题材把可直接浏览的漫画入口集中在一起。打开本页即可了解抖漫免费在线观看的常见方式、内容分类与阅读顺序，省去在多个页面之间反复查找的时间。</p>
+        <div class="hero-cta">
+          <a class="btn" href="#entry">开始阅读</a>
+          <a class="btn ghost" href="#genres">按题材找漫画</a>
+        </div>
+        <div class="stats">
+          <div><strong>6</strong><span>题材分区</span></div>
+          <div><strong>9</strong><span>推荐条目</span></div>
+          <div><strong>0</strong><span>注册门槛</span></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <span class="blob" aria-hidden="true"></span>
+        <svg viewBox="0 0 420 340" role="img" aria-label="漫画阅读场景插画">
+          <rect x="34" y="40" width="352" height="252" rx="20" fill="#ffffff" stroke="#e8e2da" stroke-width="2"/>
+          <rect x="58" y="66" width="140" height="180" rx="10" fill="#fff2ec"/>
+          <rect x="74" y="84" width="108" height="8" rx="4" fill="#ffb8a6"/>
+          <rect x="74" y="102" width="72" height="8" rx="4" fill="#ffd9cd"/>
+          <rect x="74" y="132" width="108" height="60" rx="8" fill="#1c1b2e" opacity=".08"/>
+          <rect x="74" y="204" width="48" height="24" rx="12" fill="#ff6b4a"/>
+          <rect x="222" y="66" width="140" height="86" rx="10" fill="#eaf7f2"/>
+          <rect x="238" y="82" width="86" height="8" rx="4" fill="#9fd9c8"/>
+          <rect x="238" y="100" width="110" height="8" rx="4" fill="#c6ebe0"/>
+          <rect x="238" y="118" width="64" height="8" rx="4" fill="#c6ebe0"/>
+          <rect x="222" y="168" width="66" height="78" rx="10" fill="#fff6de"/>
+          <rect x="296" y="168" width="66" height="78" rx="10" fill="#fde9e2"/>
+          <circle cx="346" cy="60" r="16" fill="#ffc94d"/>
+          <path d="M60 300h300" stroke="#e8e2da" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENTRY -->
+  <section id="entry">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">观看入口</span>
+        <h2>从哪里进入抖漫免费在线观看</h2>
+        <p>抖漫免费在线观看的主要需求是「打开就能看」。以下三个入口按使用场景区分，读者可以按自己的习惯选择，无需注册账号即可浏览页面内容。</p>
+      </div>
+      <div class="entries">
+        <article class="entry">
+          <div class="ico" style="background:#fff2ec">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e2502f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h7v15H4z"/><path d="M13 5h7v15h-7z"/></svg>
+          </div>
+          <h3>书架式浏览</h3>
+          <p>按已更新与完结两种状态排列，适合想连续追读的读者。抖漫免费在线观看的条目会标注更新情况，方便判断是否值得从头读起。</p>
+          <a class="link" href="#genres">查看分类 →</a>
+        </article>
+        <article class="entry">
+          <div class="ico" style="background:#eaf7f2">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2fa88a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+          </div>
+          <h3>按题材检索</h3>
+          <p>用题材标签快速缩小范围，恋爱、热血、悬疑、日常等分区各自独立。对只想短时间看几话的读者，这种方式更省时间。</p>
+          <a class="link" href="#genres">使用筛选 →</a>
+        </article>
+        <article class="entry">
+          <div class="ico" style="background:#fff6de">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c99a12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.5 6 .8-4.4 4.2 1.1 6L12 16.7 6.7 19.5l1.1-6L3.4 9.3l6-.8z"/></svg>
+          </div>
+          <h3>编辑推荐位</h3>
+          <p>每期挑选若干条适合入门的短篇与长篇，兼顾篇幅与节奏。初次接触抖漫免费在线观看的读者，可以从这里开始。</p>
+          <a class="link" href="#picks">看推荐 →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GENRES + PICKS -->
+  <section id="genres">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">题材分类</span>
+        <h2>抖漫免费在线观看的题材分区</h2>
+        <p>下面按题材列出本周整理的条目，点击标签可筛选下方列表。所有条目均可在抖漫免费在线观看页面内直接浏览，图片区域为示意色块。</p>
+      </div>
+
+      <div class="filters" role="tablist" aria-label="题材筛选">
+        <button class="chip active" data-filter="all" role="tab" aria-selected="true">全部</button>
+        <button class="chip" data-filter="恋爱" role="tab" aria-selected="false">恋爱</button>
+        <button class="chip" data-filter="热血" role="tab" aria-selected="false">热血</button>
+        <button class="chip" data-filter="悬疑" role="tab" aria-selected="false">悬疑</button>
+        <button class="chip" data-filter="日常" role="tab" aria-selected="false">日常</button>
+        <button class="chip" data-filter="奇幻" role="tab" aria-selected="false">奇幻</button>
+        <button class="chip" data-filter="科幻" role="tab" aria-selected="false">科幻</button>
+      </div>
+
+      <div class="grid-comics" id="comicGrid">
+        <article class="comic" data-genre="恋爱">
+          <div class="cover" style="background:#fff2ec">
+            <span>恋爱</span>
+            <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#e2502f" stroke-width="1.4" aria-hidden="true"><path d="M12 20s-7-4.4-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.6-7 9-7 9z"/></svg>
+          </div>
+          <div class="body">
+            <h3>雨后便利店</h3>
+            <p>两个在同一家便利店打工的高中生，从换班表开始的故事，节奏轻缓，适合一次读三五话。</p>
+            <div class="meta"><span>更新中</span><span>短篇</span></div>
+          </div>
+        </article>
+        <article class="comic" data-genre="热血">
+          <div class="cover" style="background:#fff6de">
+            <span>热血</span>
+            <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#c99a12" stroke-width="1.4" aria-hidden="true"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg>
+          </div>
+          <div class="body">
+            <h3>第十号擂台</h3>
+            <p>以城市地下拳赛为背景，主角从陪练做起。打斗分镜密集，是抖漫免费在线观看里偏重动作的一类。</p>
+            <div class="meta"><span>更新中</span><span>长篇</span></div>
+          </div>
+        </article>
+        <article class="comic" data-genre="悬疑">
+          <div class="cover" style="background:#edeef7">
+            <span>悬疑</span>
+            <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#4a4860" stroke-width="1.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+          </div>
+          <div class="body">
+            <h3>夜班记录员</h3>
+            <p>主人公在一栋旧楼值夜班，每晚都要登记一件无法解释的事。线索分散，适合喜欢推演的读者。</p>
+            <div class="meta"><span>完结</span><span>中篇</span></div>
+          </div>
+        </article>
+        <article class="comic" data-genre="日常">
+          <div class="cover" style="background:#eaf7f2">
+            <span>日常</span>
+            <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#2fa88a" stroke-width="1.4" aria-hidden="true"><path d="M4 18V9l8-5 8 5v9z"/><path d="M9 18v-5h6v5"/></svg>
+          </div>
+          <div class="body">
+            <h3>三楼的猫与账单</h3>
+            <p>合租公寓里的四个年轻人与一只猫，围绕水电费和做饭展开。单话独立，随时可以插入阅读。</p>
+            <div class="meta"><span>更新中</span><span>单元剧</span></div>
+          </div>
+        </article>
+        <article class="comic" data-genre="奇幻">
+          <div class="cover" style="background:#f3eefb">
+            <span>奇幻</span>
+            <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#7a5cc4" stroke-width="1.4" aria-hidden="true"><path d="M12 3l2.6 5.5 6 .8-4.4 4.2 1.1 6L12 16.7 6.7 19.5l1.1-6L3.4 9.3l6-.8z"/></svg>
+          </div>
+          <div class="body">
+            <h3>借火的旅人</h3>
+            <p>世界设定在火种熄灭之后，旅人靠借火前行。设定说明放在每话末尾，阅读时不影响主线推进。</p>
+            <div class="meta"><span>更新中</span><span>长篇</span></div>
+          </div>
+        </article>
+        <article class="comic" data-genre="科幻">
+          <div class="cover" style="background:#e9f1fb">
+            <span>科幻</span>
+            <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#2f6fa8" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="4"/><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(-20 12 12)"/></svg>
+          </div>
+          <div class="body">
+            <h3>轨道上的邮差</h3>
+            <p>在环地轨道负责投递的邮差，每站送一封信。画面偏冷色调，是抖漫免费在线观看中设定感较强的一部。</p>
+            <div class="meta"><span>完结</span><span>中篇</span></div>
+          </div>
+        </article>
+        <article class="comic" data-genre="恋爱">
+          <div class="cover" style="background:#fde9e2">
+            <span>恋爱</span>
+            <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#e2502f" stroke-width="1.4" aria-hidden="true"><path d="M12 20s-7-4.4-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.6-7 9-7 9z"/></svg>
+          </div>
+          <div class="body">
+            <h3>错发的一条短信</h3>
+            <p>从一条发错的短信开始的对话体漫画，几乎全程靠对话框推进，适合在手机上竖屏阅读。</p>
+            <div class="meta"><span>更新中</span><span>短篇</span></div>
+          </div>
+        </article>
+        <article class="comic" data-genre="热血">
+          <div class="cover" style="background:#fff2e6">
+            <span>热血</span>
+            <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#d97a1f" stroke-width="1.4" aria-hidden="true"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg>
+          </div>
+          <div class="body">
+            <h3>替补席上的九号</h3>
+            <p>校园球队的替补球员争取上场机会，赛程推进扎实。抖漫免费在线观看的读者常把这类归为运动热血。</p>
+            <div class="meta"><span>更新中</span><span>长篇</span></div>
+          </div>
+        </article>
+        <article class="comic" data-genre="悬疑">
+          <div class="cover" style="background:#eef1f5">
+            <span>悬疑</span>
+            <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#4a4860" stroke-width="1.4" aria-hidden="true"><path d="M5 4h14v16H5z"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>
+          </div>
+          <div class="body">
+            <h3>第七份证词</h3>
+            <p>同一件事由七个人分别讲述，第六话开始出现明显矛盾。适合一次读完后回看前文的读者。</p>
+            <div class="meta"><span>完结</span><span>中篇</span></div>
+          </div>
+        </article>
+      </div>
+      <p class="empty-note" id="emptyNote">该题材暂无收录条目，可切换其他标签查看。</p>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">观看方式</span>
+        <h2>三步完成一次抖漫免费在线观看</h2>
+        <p>抖漫免费在线观看不需要填写账号信息，流程集中在选择与阅读两件事上。下面按实际操作顺序说明。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>选定题材</h3>
+          <p>先确定今天想看的类型，从恋爱、热血、悬疑、日常、奇幻、科幻中挑一个，减少无效翻页。</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>确认更新状态</h3>
+          <p>条目上标注「更新中」或「完结」。想一口气读完的选完结作品，想跟读的选更新中的作品。</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>进入阅读页</h3>
+          <p>在抖漫免费在线观看页面内打开作品，按话数顺序阅读。手机端建议竖屏，画面比例更贴合。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / PROSE -->
+  <section id="about">
+    <div class="wrap split">
+      <div class="prose">
+        <div class="sec-head" style="margin-bottom:20px">
+          <span class="tag">关于本站</span>
+          <h2>为什么单独做一个抖漫免费在线观看导航页</h2>
+        </div>
+        <p>漫画资源分散在不同页面，读者常常要先记住作品名，再去搜索框里重新输入一遍。<strong>抖漫免费在线观看</strong>这一定位，解决的就是「从哪里开始看」的问题：把常读的题材和条目归拢到同一页，减少跳转次数。</p>
+        <p>本页不存放漫画文件，也不提供任何下载包，只整理阅读入口与分类信息。条目信息来自公开的作品页，更新状态会随作品实际进度变化，标注以最近一次整理为准。</p>
+        <p>对刚接触的读者，建议先从「日常」或「短篇」分区入手，单话篇幅短、剧情负担小，更容易判断自己偏好哪类画风与节奏。熟悉之后，再进入长篇连载区。抖漫免费在线观看的阅读体验也更依赖稳定的网络环境，切换作品前建议先确认当前页面已完整加载。</p>
+        <p>如果某条作品无法打开，通常是链接调整或作品下架所致，与本页无关。此时可以改用题材筛选重新找一部，或回到推荐位查看本期替换条目。</p>
+      </div>
+      <div class="faq" id="faq">
+        <details open>
+          <summary>抖漫免费在线观看需要注册吗？</summary>
+          <p>本页列出的阅读入口不要求填写账号信息，打开作品页即可浏览内容。部分作品页可能根据自身设置提供收藏等功能，是否使用由读者自行决定。</p>
+        </details>
+        <details>
+          <summary>为什么有的作品显示完结却还在更新？</summary>
+          <p>标注以整理时为准。作品可能追加番外或特别篇，出现这种情况时以作品页的实际话数为准，本页状态会在下次整理时同步。</p>
+        </details>
+        <details>
+          <summary>手机上阅读画面被裁切怎么办？</summary>
+          <p>建议竖屏阅读并关闭浏览器的强制缩放。部分长条漫画按竖向分页，需要上下滑动而不是左右翻页。</p>
+        </details>
+        <details>
+          <summary>可以下载漫画到本地吗？</summary>
+          <p>本页仅提供在线阅读入口，不提供漫画文件下载。页面上的下载按钮目前为占位状态，尚未开放使用。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section>
+    <div class="wrap">
+      <div class="band">
+        <div>
+          <h2>挑一部，开始今天的抖漫免费在线观看</h2>
+          <p>回到题材分区，按标签筛选后直接打开作品。阅读记录请以各作品页为准，本页不保存浏览历史。</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn" href="#genres">按题材浏览</a>
+          <a class="btn" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="background:rgba(255,255,255,.16);color:#fff;box-shadow:none">下载</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand-foot">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1c1b2e"/>
+            <path d="M18 20h12a6 6 0 016 6v22a5 5 0 00-5-5H18z" fill="#ff7a59"/>
+            <path d="M46 20H34a6 6 0 00-6 6v22a5 5 0 015-5h13z" fill="#ffd166"/>
+            <circle cx="47" cy="15" r="5" fill="#2fa88a"/>
+          </svg>
+          <span>抖漫免费在线观看</span>
+        </div>
+        <p>抖漫免费在线观看主题导航页，整理题材分区与阅读入口，页面不存放漫画文件。</p>
+      </div>
+      <div>
+        <h4>页面导航</h4>
+        <a href="#entry">观看入口</a>
+        <a href="#genres">题材分类</a>
+        <a href="#how">观看方式</a>
+        <a href="#faq">常见问题</a>
+      </div>
+      <div>
+        <h4>说明</h4>
+        <p>条目状态以整理时为准</p>
+        <p>本页不保存浏览历史</p>
+        <p>下载入口暂未开放</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 抖漫免费在线观看 · 阅读入口导航</span>
+      <span>内容仅用于阅读指引，作品版权归原作者所有</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('menuBtn');
+    var nav = document.getElementById('navMain');
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){ nav.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+    });
+
+    var chips = document.querySelectorAll('.chip');
+    var comics = document.querySelectorAll('#comicGrid .comic');
+    var note = document.getElementById('emptyNote');
+    chips.forEach(function(chip){
+      chip.addEventListener('click', function(){
+        chips.forEach(function(c){ c.classList.remove('active'); c.setAttribute('aria-selected','false'); });
+        chip.classList.add('active');
+        chip.setAttribute('aria-selected','true');
+        var f = chip.getAttribute('data-filter');
+        var shown = 0;
+        comics.forEach(function(card){
+          var match = (f === 'all') || card.getAttribute('data-genre') === f;
+          card.style.display = match ? '' : 'none';
+          if(match) shown++;
+        });
+        note.style.display = shown ? 'none' : 'block';
+      });
+    });
+  })();
+</script>
+
+</body>
+              </html>
