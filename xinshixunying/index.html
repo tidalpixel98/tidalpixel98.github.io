@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新视讯影视-影视片单推荐_热门剧集与观影入口</title>
+<meta name="description" content="新视讯影视首页，汇集热门剧集与影片片单，按类型与题材整理观影入口，提供清晰的简介与更新动态，方便快速找到想看的内容。">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23151a24'/%3E%3Cpath d='M12 9l12 7-12 7z' fill='%23ffb347'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0f131b;
+  --bg-soft:#151a24;
+  --card:#1a2030;
+  --line:#28303f;
+  --text:#eef1f6;
+  --muted:#9aa4b6;
+  --accent:#ffb347;
+  --accent-2:#ff7a59;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{width:100%;max-width:1140px;margin:0 auto;padding:0 20px;}
+
+/* Header */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(15,19,27,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  height:64px;gap:16px;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:.5px;white-space:nowrap;}
+.logo svg{flex:none;}
+.nav-links{display:flex;gap:26px;font-size:15px;color:var(--muted);}
+.nav-links a{transition:color .2s;}
+.nav-links a:hover{color:var(--accent);}
+.nav-cta{
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  color:#1a1208;font-weight:600;font-size:14px;
+  padding:8px 16px;border-radius:999px;white-space:nowrap;
+  transition:opacity .2s;
+}
+.nav-cta:hover{opacity:.88;}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 10px;font-size:14px;}
+
+/* Hero */
+.hero{
+  position:relative;overflow:hidden;
+  padding:56px 0 48px;
+  background:
+    radial-gradient(600px 300px at 80% -10%,rgba(255,179,71,.16),transparent 70%),
+    radial-gradient(500px 260px at 8% 110%,rgba(255,122,89,.12),transparent 70%);
+  border-bottom:1px solid var(--line);
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--accent);
+  border:1px solid rgba(255,179,71,.35);
+  padding:4px 12px;border-radius:999px;margin-bottom:18px;
+}
+.hero h1{font-size:40px;line-height:1.25;letter-spacing:1px;margin-bottom:16px;}
+.hero p.lead{color:var(--muted);font-size:16px;max-width:36em;margin-bottom:26px;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  color:#1a1208;font-weight:700;font-size:15px;
+  padding:12px 26px;border-radius:999px;
+}
+.btn-ghost{
+  border:1px solid var(--line);color:var(--text);
+  padding:12px 24px;border-radius:999px;font-size:15px;
+  transition:border-color .2s,color .2s;
+}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+.hero-stats{display:flex;gap:30px;margin-top:32px;flex-wrap:wrap;}
+.hero-stats div strong{display:block;font-size:22px;color:var(--accent);line-height:1.3;}
+.hero-stats div span{font-size:13px;color:var(--muted);}
+.hero-art{
+  border-radius:20px;overflow:hidden;
+  border:1px solid var(--line);
+  background:var(--bg-soft);
+  box-shadow:0 24px 60px -30px rgba(0,0,0,.9);
+}
+.hero-art svg{display:block;width:100%;height:auto;}
+
+/* Section base */
+section{padding:56px 0;}
+.section-head{margin-bottom:30px;}
+.section-head h2{font-size:26px;letter-spacing:.5px;margin-bottom:8px;}
+.section-head p{color:var(--muted);font-size:15px;max-width:44em;}
+.eyebrow{font-size:13px;color:var(--accent);letter-spacing:2px;margin-bottom:8px;text-transform:uppercase;}
+
+/* Featured cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.card{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:transform .2s,border-color .2s;
+}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,179,71,.5);}
+.card-visual{height:130px;position:relative;}
+.card-visual svg{width:100%;height:100%;}
+.card-body{padding:18px 18px 20px;}
+.card-body h3{font-size:17px;margin-bottom:8px;}
+.card-body p{font-size:14px;color:var(--muted);}
+.card-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+.chip{font-size:12px;color:var(--accent);border:1px solid rgba(255,179,71,.3);padding:2px 10px;border-radius:999px;}
+
+/* Filter + list */
+.filter-bar{
+  display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px;
+}
+.filter-bar button{
+  background:transparent;border:1px solid var(--line);color:var(--muted);
+  font-size:14px;padding:7px 16px;border-radius:999px;cursor:pointer;
+  font-family:inherit;transition:all .2s;
+}
+.filter-bar button:hover{color:var(--text);border-color:var(--muted);}
+.filter-bar button.active{
+  background:rgba(255,179,71,.14);border-color:var(--accent);color:var(--accent);
+}
+.list{display:grid;gap:14px;}
+.item{
+  display:grid;grid-template-columns:76px 1fr auto;gap:18px;align-items:center;
+  background:var(--bg-soft);border:1px solid var(--line);
+  border-radius:var(--radius);padding:16px 20px;
+  transition:border-color .2s;
+}
+.item:hover{border-color:rgba(255,179,71,.45);}
+.item .thumb{
+  width:76px;height:56px;border-radius:10px;overflow:hidden;flex:none;
+  border:1px solid var(--line);
+}
+.item .thumb svg{width:100%;height:100%;}
+.item h3{font-size:16px;margin-bottom:4px;}
+.item p{font-size:13.5px;color:var(--muted);}
+.item .type{font-size:12.5px;color:var(--accent);white-space:nowrap;}
+
+/* Guide / text */
+.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start;}
+.prose p{color:var(--muted);font-size:15px;margin-bottom:16px;}
+.prose strong{color:var(--text);font-weight:600;}
+.aside-box{
+  background:var(--bg-soft);border:1px solid var(--line);
+  border-radius:var(--radius);padding:24px;
+}
+.aside-box h3{font-size:17px;margin-bottom:14px;}
+.aside-box ul{list-style:none;display:grid;gap:12px;}
+.aside-box li{font-size:14px;color:var(--muted);padding-left:20px;position:relative;}
+.aside-box li::before{
+  content:"";position:absolute;left:0;top:9px;
+  width:8px;height:8px;border-radius:2px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+}
+
+/* Download strip */
+.dl-strip{
+  background:linear-gradient(135deg,rgba(255,179,71,.12),rgba(255,122,89,.08));
+  border:1px solid rgba(255,179,71,.3);
+  border-radius:18px;padding:34px;
+  display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;
+}
+.dl-strip h2{font-size:22px;margin-bottom:8px;}
+.dl-strip p{color:var(--muted);font-size:14.5px;max-width:38em;}
+.btn-dl{
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  color:#1a1208;font-weight:700;font-size:15px;
+  padding:12px 30px;border-radius:999px;
+  pointer-events:none;opacity:.9;display:inline-block;white-space:nowrap;
+}
+
+/* Footer */
+footer{
+  border-top:1px solid var(--line);
+  padding:38px 0 30px;background:var(--bg-soft);
+}
+.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;}
+.foot-brand{max-width:340px;}
+.foot-brand .logo{font-size:16px;margin-bottom:10px;}
+.foot-brand p{font-size:13.5px;color:var(--muted);}
+.foot-links{display:flex;gap:50px;flex-wrap:wrap;}
+.foot-links h4{font-size:14px;margin-bottom:12px;color:var(--text);}
+.foot-links a{display:block;font-size:13.5px;color:var(--muted);margin-bottom:8px;}
+.foot-links a:hover{color:var(--accent);}
+.copy{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:#6f7a8c;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:30px;}
+  .cards{grid-template-columns:1fr 1fr;}
+  .two-col{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+  .menu-btn{display:inline-block;}
+}
+@media (max-width:620px){
+  .hero{padding:38px 0 34px;}
+  .hero h1{font-size:26px;}
+  .cards{grid-template-columns:1fr;}
+  .item{grid-template-columns:64px 1fr;gap:14px;}
+  .item .type{grid-column:2;justify-self:start;}
+  .item .thumb{width:64px;height:48px;}
+  section{padding:42px 0;}
+  .dl-strip{padding:24px;}
+  .foot-links{gap:32px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="新视讯影视首页">
+      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="9" fill="#1a2030" stroke="#ffb347" stroke-width="1.4"/>
+        <path d="M12.5 9.5l11 6.5-11 6.5z" fill="#ffb347"/>
+      </svg>
+      新视讯影视
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#picks">精选片单</a>
+      <a href="#library">剧集速览</a>
+      <a href="#guide">观影指南</a>
+      <a href="#download">客户端</a>
+    </nav>
+    <a class="nav-cta" href="#picks">开始选片</a>
+    <button class="menu-btn" type="button" aria-label="打开导航" onclick="document.getElementById('picks').scrollIntoView()">导航</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="hero-tag">
+          <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="#ffb347"/></svg>
+          本期片单已更新
+        </span>
+        <h1>新视讯影视</h1>
+        <p class="lead">新视讯影视把热门剧集与影片按题材归类，配上简短看点与播出信息，帮助你在几分钟内挑到今晚想看的那一部。</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#picks">浏览精选片单</a>
+          <a class="btn-ghost" href="#library">查看剧集速览</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>6 大</strong><span>题材分类</span></div>
+          <div><strong>每周</strong><span>片单更新</span></div>
+          <div><strong>3 类</strong><span>客户端支持</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#232b3d"/>
+              <stop offset="1" stop-color="#151a24"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#ffb347"/>
+              <stop offset="1" stop-color="#ff7a59"/>
+            </linearGradient>
+          </defs>
+          <rect width="480" height="360" fill="url(#g1)"/>
+          <circle cx="380" cy="80" r="110" fill="#ffb347" opacity="0.07"/>
+          <circle cx="90" cy="300" r="130" fill="#ff7a59" opacity="0.06"/>
+          <rect x="46" y="58" width="250" height="150" rx="12" fill="#1a2030" stroke="#2c3547"/>
+          <path d="M152 106l44 27-44 27z" fill="url(#g2)"/>
+          <rect x="46" y="228" width="170" height="10" rx="5" fill="#2c3547"/>
+          <rect x="46" y="250" width="120" height="10" rx="5" fill="#232b3d"/>
+          <rect x="330" y="180" width="106" height="140" rx="12" fill="#1a2030" stroke="#2c3547"/>
+          <rect x="346" y="198" width="74" height="46" rx="6" fill="#242c3d"/>
+          <path d="M376 214l14 9-14 9z" fill="#ffb347"/>
+          <rect x="346" y="258" width="74" height="8" rx="4" fill="#2c3547"/>
+          <rect x="346" y="274" width="52" height="8" rx="4" fill="#232b3d"/>
+          <rect x="346" y="290" width="64" height="8" rx="4" fill="#232b3d"/>
+          <rect x="230" y="240" width="80" height="26" rx="13" fill="url(#g2)" opacity="0.9"/>
+          <rect x="246" y="250" width="48" height="6" rx="3" fill="#1a1208"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured -->
+  <section id="picks">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">精选片单</div>
+        <h2>本周值得一看的三类内容</h2>
+        <p>新视讯影视的片单不追求数量堆砌，每一类只保留近期讨论度高、口碑稳定的作品，并标注适合的观看场景。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-visual">
+            <svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="320" height="130" fill="#1e2636"/>
+              <circle cx="260" cy="30" r="70" fill="#ffb347" opacity="0.1"/>
+              <rect x="30" y="40" width="70" height="52" rx="8" fill="#2b3448"/>
+              <path d="M56 58l16 10-16 10z" fill="#ffb347"/>
+              <rect x="118" y="48" width="150" height="9" rx="4" fill="#2b3448"/>
+              <rect x="118" y="66" width="110" height="9" rx="4" fill="#242c3d"/>
+              <rect x="118" y="84" width="80" height="9" rx="4" fill="#242c3d"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>悬疑推理剧集</h3>
+            <p>节奏紧凑、线索清晰的短剧集，适合连续追看。片单中标注了单集时长与整体篇幅，方便安排时间。</p>
+            <div class="card-meta"><span class="chip">悬疑</span><span class="chip">剧情</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-visual">
+            <svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="320" height="130" fill="#1e2636"/>
+              <circle cx="60" cy="100" r="80" fill="#ff7a59" opacity="0.09"/>
+              <rect x="30" y="38" width="260" height="54" rx="10" fill="#2b3448"/>
+              <circle cx="60" cy="65" r="14" fill="#ff7a59"/>
+              <rect x="88" y="54" width="130" height="8" rx="4" fill="#3a4459"/>
+              <rect x="88" y="70" width="90" height="8" rx="4" fill="#313a4e"/>
+              <rect x="236" y="52" width="40" height="26" rx="6" fill="#ffb347" opacity="0.8"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>都市生活电影</h3>
+            <p>两小时以内的现实题材影片，适合周末晚间放松观看。每部都附有一句话简介，避免提前剧透。</p>
+            <div class="card-meta"><span class="chip">都市</span><span class="chip">电影</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-visual">
+            <svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="320" height="130" fill="#1e2636"/>
+              <circle cx="160" cy="130" r="90" fill="#ffb347" opacity="0.08"/>
+              <rect x="40" y="34" width="240" height="24" rx="6" fill="#2b3448"/>
+              <rect x="40" y="66" width="240" height="24" rx="6" fill="#242c3d"/>
+              <rect x="40" y="98" width="160" height="8" rx="4" fill="#2b3448"/>
+              <circle cx="54" cy="46" r="5" fill="#ffb347"/>
+              <circle cx="54" cy="78" r="5" fill="#ff7a59"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>纪录片与人文纪实</h3>
+            <p>按主题成组呈现的纪实内容，适合慢节奏观看。片单中标明集数，便于按系列顺序浏览。</p>
+            <div class="card-meta"><span class="chip">纪实</span><span class="chip">人文</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Library with filter -->
+  <section id="library" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">剧集速览</div>
+        <h2>按题材筛选近期条目</h2>
+        <p>点击下方标签即可筛选。每一项都给出题材、篇幅与一句看点，点击标题可展开阅读更多，内容均来自新视讯影视的片单记录。</p>
+      </div>
+      <div class="filter-bar" role="group" aria-label="题材筛选">
+        <button type="button" class="active" data-filter="all">全部</button>
+        <button type="button" data-filter="悬疑">悬疑</button>
+        <button type="button" data-filter="都市">都市</button>
+        <button type="button" data-filter="纪实">纪实</button>
+        <button type="button" data-filter="古装">古装</button>
+      </div>
+      <div class="list" id="list">
+        <article class="item" data-type="悬疑">
+          <div class="thumb">
+            <svg viewBox="0 0 76 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="76" height="56" fill="#242c3d"/><circle cx="38" cy="24" r="11" fill="none" stroke="#ffb347" stroke-width="2"/><path d="M45 31l8 8" stroke="#ffb347" stroke-width="2"/></svg>
+          </div>
+          <div>
+            <h3>迷雾档案</h3>
+            <p>12 集短剧，单集 45 分钟，围绕一桩旧案展开，线索推进较为克制。</p>
+          </div>
+          <span class="type">悬疑 · 剧集</span>
+        </article>
+        <article class="item" data-type="都市">
+          <div class="thumb">
+            <svg viewBox="0 0 76 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="76" height="56" fill="#242c3d"/><rect x="14" y="26" width="12" height="20" fill="#ff7a59"/><rect x="32" y="16" width="12" height="30" fill="#ffb347"/><rect x="50" y="22" width="12" height="24" fill="#3a4459"/></svg>
+          </div>
+          <div>
+            <h3>城市夜行</h3>
+            <p>电影，时长 108 分钟，以夜间通勤为线索串联三段人物故事。</p>
+          </div>
+          <span class="type">都市 · 电影</span>
+        </article>
+        <article class="item" data-type="纪实">
+          <div class="thumb">
+            <svg viewBox="0 0 76 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="76" height="56" fill="#242c3d"/><path d="M18 40l12-16 10 10 8-14 12 20z" fill="#ffb347" opacity="0.85"/></svg>
+          </div>
+          <div>
+            <h3>河流的四季</h3>
+            <p>6 集纪录片，跟随一条河流记录沿岸生活，画面以自然光为主。</p>
+          </div>
+          <span class="type">纪实 · 纪录片</span>
+        </article>
+        <article class="item" data-type="古装">
+          <div class="thumb">
+            <svg viewBox="0 0 76 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="76" height="56" fill="#242c3d"/><path d="M20 42h36l-6-20H26z" fill="#ff7a59"/><circle cx="38" cy="16" r="6" fill="#ffb347"/></svg>
+          </div>
+          <div>
+            <h3>长街旧事</h3>
+            <p>24 集长剧，以街市变迁为背景，人物关系推进较慢，适合慢看。</p>
+          </div>
+          <span class="type">古装 · 剧集</span>
+        </article>
+        <article class="item" data-type="悬疑">
+          <div class="thumb">
+            <svg viewBox="0 0 76 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="76" height="56" fill="#242c3d"/><rect x="16" y="12" width="44" height="30" rx="4" fill="none" stroke="#ffb347" stroke-width="2"/><rect x="24" y="20" width="28" height="4" fill="#3a4459"/><rect x="24" y="30" width="18" height="4" fill="#3a4459"/></svg>
+          </div>
+          <div>
+            <h3>夜半来电</h3>
+            <p>8 集限定剧，单集 35 分钟，结构偏单元式，适合分段观看。</p>
+          </div>
+          <span class="type">悬疑 · 剧集</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide -->
+  <section id="guide">
+    <div class="wrap two-col">
+      <div class="prose">
+        <div class="eyebrow">观影指南</div>
+        <h2 style="font-size:26px;margin-bottom:18px;">怎样在新视讯影视快速找到想看的</h2>
+        <p><strong>先定场景，再看片单。</strong>如果你只有一小时，优先看单集短剧；如果周末整块时间充裕，再从长剧或纪录片里挑。新视讯影视在每个条目标注了篇幅与单集时长，就是为了让你少翻几次。</p>
+        <p><strong>题材标签是筛选入口。</strong>悬疑、都市、纪实、古装四类覆盖了大部分日常需求，标签之间不重叠，同一部作品只归入一类，避免选择困难。</p>
+        <p><strong>简介只给看点，不剧透。</strong>每段简介控制在一两句话，说明节奏、时长与适合的观看状态，具体剧情留给正片。这样即使看到不熟悉的片名，也能判断要不要点开。</p>
+        <p>新视讯影视的片单按周整理，更新时优先替换已下架或口碑波动的条目，保留稳定内容。页面中的篇幅、集数与时长以条目发布时的记录为准，若与播出平台有出入，以平台信息为准。</p>
+      </div>
+      <aside class="aside-box">
+        <h3>选片时可以先问三件事</h3>
+        <ul>
+          <li>今天有多少连续时间？一小时以内优先选电影或短剧单集。</li>
+          <li>想跟情节还是想放松？悬疑需要专注，纪实适合边看边做别的事。</li>
+          <li>是否介意慢节奏？长剧前几集通常铺垫较多，可以按集数安排。</li>
+        </ul>
+        <p style="margin-top:18px;font-size:13.5px;color:#6f7a8c;">以上建议来自新视讯影视片单的整理方式，不构成对具体作品的评价。</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Download -->
+  <section id="download" style="padding-top:0;">
+    <div class="wrap">
+      <div class="dl-strip">
+        <div>
+          <h2>把新视讯影视放进手机桌面</h2>
+          <p>客户端支持片单收藏与更新提醒，桌面端与移动端共用同一份片单记录。安装包正在准备中，下载入口开放后会在此处更新。</p>
+        </div>
+        <a class="btn-dl" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo">
+          <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true">
+            <rect width="32" height="32" rx="9" fill="#1a2030" stroke="#ffb347" stroke-width="1.4"/>
+            <path d="M12.5 9.5l11 6.5-11 6.5z" fill="#ffb347"/>
+          </svg>
+          新视讯影视
+        </div>
+        <p>新视讯影视以题材分类整理剧集与影片片单，提供简介、篇幅与观看建议，帮助访问者更快做出选择。</p>
+      </div>
+      <div class="foot-links">
+        <div>
+          <h4>内容</h4>
+          <a href="#picks">精选片单</a>
+          <a href="#library">剧集速览</a>
+          <a href="#guide">观影指南</a>
+        </div>
+        <div>
+          <h4>客户端</h4>
+          <a href="#download">下载入口</a>
+          <a href="#top">返回顶部</a>
+        </div>
+      </div>
+    </div>
+    <div class="copy">
+      <span>新视讯影视 · 片单内容按周整理</span>
+      <span>篇幅与时长以条目记录为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var buttons = document.querySelectorAll('.filter-bar button');
+  var items = document.querySelectorAll('#list .item');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      buttons.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var f = btn.getAttribute('data-filter');
+      items.forEach(function(it){
+        var show = (f === 'all') || (it.getAttribute('data-type') === f);
+        it.style.display = show ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+</body>
+          </html>
